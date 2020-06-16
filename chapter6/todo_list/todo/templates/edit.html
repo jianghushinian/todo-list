@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List | Edit</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<h1 class="container">Edit</h1>
+<div class="container">
+    <form class="edit" action="/edit" method="post">
+        <input type="hidden" name="id" value="{{ todo.id }}">
+        <input type="text" name="content" value="{{ todo.content }}">
+        <button>保存</button>
+    </form>
+</div>
+</body>
+</html>
