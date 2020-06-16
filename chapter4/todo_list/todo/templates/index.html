@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+</head>
+<body>
+<h1 class="container">Todo List</h1>
+<div class="container">
+    <ul>
+        {% for todo in todo_list %}
+            <li>
+                <div>{{ todo.content }}</div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+</body>
+</html>
