@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+    <!-- 引入外部 CSS 样式 -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<h1 class="container">Todo List</h1>
+<div class="container">
+    <ul>
+        <li>
+            <form class="new" action="/new" method="post">
+                <input type="text" name="content" required>
+                <button class="save">新建</button>
+            </form>
+        </li>
+        <br>
+        {% for todo in todo_list %}
+            <li>
+                <div>{{ todo.content }}</div>
+                <div>
+                    <a href="/edit?id={{ todo.id }}">
+                        <button>编辑</button>
+                    </a>
+                    <form class="delete" action="/delete" method="post">
+                        <input type="hidden" name="id" value="{{ todo.id }}">
+                        <button>删除</button>
+                    </form>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+</body>
+</html>
