@@ -1,0 +1,9 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# misc
+.DS_Store
+
+# IDE
+.idea
+.vscode
