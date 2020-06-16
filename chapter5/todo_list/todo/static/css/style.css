@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+    color: #000000;
+}
+
+h1 {
+    margin: 20px auto;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container ul {
+    width: 100%;
+    max-width: 600px;
+}
+
+.container ul li {
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 4px;
+    padding: 0 6px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #d2d2d2;
+}
