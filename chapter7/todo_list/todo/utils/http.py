@@ -18,7 +18,6 @@ class Request(object):
     def parse_data(self, data):
         """解析请求数据"""
         # 用请求报文中的第一个 '\r\n\r\n' 做分割，将得到请求头和请求体
-        # 请求体暂时用不到先不处理
         header, body = data.split('\r\n\r\n', 1)
         method, path, headers, args = self._parse_header(header)
         form = self._path_body(body)
