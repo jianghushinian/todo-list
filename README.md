@@ -27,7 +27,7 @@ git clone git@github.com:jianghushinian/todo-list.git
 ### 进入章节目录
 
 ```bash
-cd todo-list/chapter7/todo_list
+cd todo-list/chapter8/todo_list
 ```
 
 ### 运行
