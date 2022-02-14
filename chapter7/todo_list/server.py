@@ -13,9 +13,13 @@ from todo.controllers import routes
 def process_connection(client):
     """处理客户端请求"""
     # 接收请求报文数据
+    client.settimeout(0)
     request_bytes = b''
     while True:
-        chunk = client.recv(BUFFER_SIZE)
+        try:
+            chunk = client.recv(BUFFER_SIZE)
+        except BlockingIOError:
+            break
         request_bytes += chunk
         if len(chunk) < BUFFER_SIZE:
             break

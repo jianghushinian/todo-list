@@ -8,9 +8,13 @@ import threading
 def process_connection(client):
     """处理客户端连接"""
     # 接收客户端发来的数据
+    client.settimeout(0)
     data = b''
     while True:
-        chunk = client.recv(1024)
+        try:
+            chunk = client.recv(1024)
+        except BlockingIOError:
+            break
         data += chunk
         if len(chunk) < 1024:
             break

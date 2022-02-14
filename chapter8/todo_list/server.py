@@ -20,9 +20,13 @@ def process_connection(client):
     Returns:
         None
     """
+    client.settimeout(0)
     request_bytes = b''
     while True:
-        chunk = client.recv(BUFFER_SIZE)
+        try:
+            chunk = client.recv(BUFFER_SIZE)
+        except BlockingIOError:
+            break
         request_bytes += chunk
         if len(chunk) < BUFFER_SIZE:
             break
