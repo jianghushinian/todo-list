@@ -8,6 +8,8 @@ import threading
 def process_connection(client):
     """处理客户端连接"""
     # 接收客户端发来的数据
+    # 解决客户端发送数据长度等于 recv 接收的长度倍数时阻塞问题
+    # https://docs.python.org/zh-cn/3.7/library/socket.html#socket.socket.settimeout
     client.settimeout(0)
     data = b''
     while True:
