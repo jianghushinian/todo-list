@@ -12,9 +12,15 @@ from todo.controllers import routes
 def process_connection(client):
     """处理客户端请求"""
     # 接收请求报文数据
+    # 解决客户端发送数据长度等于 recv 接收的长度倍数时阻塞问题
+    # https://docs.python.org/zh-cn/3.7/library/socket.html#socket.socket.settimeout
+    client.settimeout(0)
     request_bytes = b''
     while True:
-        chunk = client.recv(BUFFER_SIZE)
+        try:
+            chunk = client.recv(BUFFER_SIZE)
+        except BlockingIOError:
+            break
         request_bytes += chunk
         if len(chunk) < BUFFER_SIZE:
             break
