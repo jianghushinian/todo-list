@@ -35,3 +35,10 @@ cd todo-list/chapter8/todo_list
 ```bash
 python3 server.py
 ```
+
+### 首页
+
+用户名：`zhangsan` 密码：`123456`
+
+![Todo List](https://jianghushinian.cn/2020/07/17/%E7%94%A8-Python-%E6%92%B8%E4%B8%80%E4%B8%AA-Web-%E6%9C%8D%E5%8A%A1%E5%99%A8-%E7%AC%AC3%E7%AB%A0%EF%BC%9A%E4%BD%BF%E7%94%A8-MVC-%E6%9E%84%E5%BB%BA%E7%A8%8B%E5%BA%8F/Index.png)
+
