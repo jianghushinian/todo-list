@@ -164,7 +164,7 @@ class Response(object):
         # Cookie
         if self.cookies:
             header += 'Set-Cookie: ' + \
-                      '; '.join(f'{k}={v}' for k, v in self.cookies.items())
+                      '; '.join(f'{k}={v}' for k, v in self.cookies.items()) + '\r\n'
         # 空行
         blank_line = '\r\n'
         # 响应体
